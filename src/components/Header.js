@@ -1,7 +1,10 @@
+import Nav from "./Nav"
+
 const Header = () => {
-    return(
+    return (
         <header className="header">
-            <h1>Soy el Header</h1>
+            <img src="#" alt="logo"/>
+            <Nav/>
         </header>
     )
 }
