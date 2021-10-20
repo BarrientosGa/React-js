@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,33 +6,69 @@
     list-style: none;
     color: inherit;
 }
-.header{
+
+.header {
     background-color: yellow;
     width: 100%;
     height: 10vh;
 }
-.title-logo{
+
+.title-logo {
     font-size: 25px;
     position: relative;
     top: 1rem;
+    margin-left: 0.5rem;
 }
-.nav-header{
+
+.nav-header {
     display: flex;
     justify-content: space-evenly;
 }
-.nav-ul{
+
+.nav-ul {
     display: flex;
-    margin-left: 10rem;
+    margin-left: 15rem;
 }
-.accountant{
-    margin-left: 62.5rem;
+
+.nav-ul li {
+    padding-left: 1rem;
+}
+.iconCart{
     position: relative;
+    left: 15rem;
+    font-size: 25px;
+}
+.accountant {
+    float: right;
+    position: relative;
+    right: 5rem;
     bottom: 1.3rem;
-    
+
 }
-.main{
-    background-color: tomato;
+.form-ItemCount{
+    margin-left: 30rem;
+    position: relative;
+    top: 2rem;
+}   
+.form-input{
+    text-align: center;
 }
-.footer{
-    background-color: teal;
+.btn-remove{
+    position: relative;
+    right: 9rem;
+    top: 0.3rem;
+    border-style: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+.iconRemove,.iconAdd{
+    font-size: 18px;
+}
+.btn-add{
+    position: relative;
+    top: 0.3rem;
+    right: 2.3rem;
+    border-style: none;
+    background-color: inherit;
+    cursor: pointer;
 }
