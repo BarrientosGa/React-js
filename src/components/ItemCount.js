@@ -3,7 +3,7 @@ const ItemCount = ({stock,initial,onAdd}) => {
     const [account,setAccount]= useState(initial);
     function removeCount(e){
         e.preventDefault()
-        if(account <= 0){
+        if(account > 0){
             setAccount(account - 1)
         }
     }
