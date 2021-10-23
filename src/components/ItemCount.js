@@ -13,13 +13,9 @@ const ItemCount = ({stock,initial,onAdd}) => {
             setAccount(account + 1)
         }
     }
-    function onAdd(e){
-        e.preventDefault()
-        console.log(account)
-    }
     return (
         <form className="form-ItemCount">
-            <input className="form-input" value={account}/>
+            <input className="form-input" value={account} readOnly/>
             <button onClick={removeCount} className="btn-remove"><span className="material-icons iconRemove">remove</span></button>
             <button onClick={addCount} className="btn-add"><span className="material-icons iconAdd">add</span></button>
             <button onClick={onAdd}>Agregar a carrito</button>
