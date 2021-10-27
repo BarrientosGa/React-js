@@ -1,5 +1,4 @@
 import CartWidget from "./CartWidget"
-import ItemListContainer from "./ItemListContainer"
 const Nav = () => {
     return (
         <>
@@ -10,7 +9,6 @@ const Nav = () => {
             </ul>
             <CartWidget/>
         </nav>
-        <ItemListContainer contador={0}/>
         </>
     )
 }

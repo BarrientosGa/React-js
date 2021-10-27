@@ -5,5 +5,12 @@
         "description" : "agregar descripcion",
         "price" : 19999,
         "img" : "/motorola_e7i.png"
+    },
+    {
+        "id" : 1 ,
+        "title" : "Celular Samsung Galaxy A21s 128 GB Negro",
+        "description" :"agregar descripcion",
+        "price" : 40999,
+        "img" : "/samsung_A21.png"
     }
 ]
