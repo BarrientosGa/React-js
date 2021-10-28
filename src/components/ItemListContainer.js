@@ -6,30 +6,25 @@ import productos_Json from "./productos.json"
 const ItemListContainer = ({contador}) => {
     const [productos, setProductos] = useState([])
     useEffect(() => {
-        return(
             promesa
-                .then(()=>
+                .then((data_json)=>{
                     setTimeout(()=>{
-                        setProductos(productos_Json)
+                        setProductos(data_json)
                     },2000)
-                )
-                .catch(()=>
+                })
+                .catch(()=>{
                     console.log("Error")
-                )
-        )
+                    
+                })
     },[])
-    const promesa= new Promise((res, rej) => {
-        if(productos.length === 0){
-            rej()
-        }
-        else{
-            res()
-        }
+    const promesa= new Promise((resolve, reject) => {
+        resolve(productos_Json)
     })
+
     return (
         <div>
-            {<ItemList prod={productos}/>}
-            {<span className="accountant">{contador}</span>}
+            <span className="count">{contador}</span>
+            {productos.length===0?<p>Cargando...</p>:<ItemList items={productos}/>}
             {/* <ItemCount stock={5} initial={1} onAdd={function(){console.log("")}}/> */}
         </div>
     )

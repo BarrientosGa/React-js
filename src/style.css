@@ -22,13 +22,14 @@
 
 .nav-header {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-evenly; 
 }
 
 .nav-ul {
     display: flex;
-    margin-left: 15rem;
-}
+    margin-left: 15rem; 
+} 
+
 
 .nav-ul li {
     padding-left: 1rem;
@@ -38,14 +39,12 @@
     left: 15rem;
     font-size: 25px;
 }
-.accountant {
-    float: right;
+.count{
     position: relative;
-    right: 5rem;
-    bottom: 1.3rem;
-
+    left: 79rem;
+    bottom: 2rem;
 }
-.form-ItemCount{
+/* .form-ItemCount{
     margin-left: 30rem;
     position: relative;
     top: 2rem;
@@ -71,4 +70,27 @@
     border-style: none;
     background-color: inherit;
     cursor: pointer;
+} */
+.comp-main{
+    height: 150vh;
+}
+.item{
+    min-height: 60vh;
+    display: inline-flex;
+    max-width: 1000px;
+    padding-top: 7vh;
+    margin-left: 9rem;
+}
+.card-item{
+    width: 250px;
+    height: auto;
+    background-color: white;
+    box-shadow: black 2px 5px 5px 2px;
+}
+.comp-footer{
+    width: 100%;
+    background-color: grey;
+}
+.comp-footer p{
+    text-align: center;
 }

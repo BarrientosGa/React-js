@@ -1,12 +1,14 @@
 import Header from "./Header"
-import ItemListContainer from "./ItemListContainer"
-
+import Main from "./Main"
+import Footer from "./Footer"
 
 const App =() => {
     return(
         <>
             <Header/>
-            <ItemListContainer contador={0}/>
+            <Main/>
+            <Footer/>
+            
         </>
     )
 }
