@@ -5,7 +5,7 @@ const Item = ({ item }) => {
                     <img src={item.img} width="240" height="250" alt="Foto de motorola" />
                     <p>{item.title}</p>
                     <p>${item.price}</p>
-                    <button>Ver detalle del producto</button>
+                    <button id={item.id}>Ver detalle del producto</button>
             </div>
         </div>
     )

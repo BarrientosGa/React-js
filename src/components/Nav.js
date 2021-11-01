@@ -4,8 +4,8 @@ const Nav = () => {
         <>
         <nav className="nav-header">
             <ul className="nav-ul">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Marca</a></li>
+                <li>Inicio</li>
+                <li>Categorias</li>
             </ul>
             <CartWidget/>
         </nav>

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-/* import ItemCount from "./ItemCount" */
 import ItemList from "./ItemList"
 import productos_Json from "./productos.json"
 
@@ -17,7 +16,7 @@ const ItemListContainer = ({contador}) => {
                     
                 })
     },[])
-    const promesa= new Promise((resolve, reject) => {
+    const promesa= new Promise((resolve) => {
         resolve(productos_Json)
     })
 
@@ -25,7 +24,6 @@ const ItemListContainer = ({contador}) => {
         <div>
             <span className="count">{contador}</span>
             {productos.length===0?<p>Cargando...</p>:<ItemList items={productos}/>}
-            {/* <ItemCount stock={5} initial={1} onAdd={function(){console.log("")}}/> */}
         </div>
     )
 }

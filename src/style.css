@@ -44,7 +44,7 @@
     left: 79rem;
     bottom: 2rem;
 }
-/* .form-ItemCount{
+.form-ItemCount{
     margin-left: 30rem;
     position: relative;
     top: 2rem;
@@ -70,7 +70,7 @@
     border-style: none;
     background-color: inherit;
     cursor: pointer;
-} */
+}
 .comp-main{
     height: 150vh;
 }
