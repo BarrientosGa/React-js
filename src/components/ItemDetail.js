@@ -1,12 +1,17 @@
 import ItemCount from './ItemCount';
-const ItemDetail = ({item}) => {
+const ItemDetail = ({ item }) => {
     return (
-        <div>
-            <img src="https://via.placeholder.com/150" alt="item" />
-            <p>{item.description}</p>
-            <p>${item.price}</p>
-            <ItemCount stock={3} initial={1} onAdd={()=>{console.log("Tocaste el boton de comprar")}}/>
-        </div>
+        <main className="main_ItemDetail">
+            <div className="img_ItemDetail">
+                <img src={item.img} alt="item" /> 
+            </div>
+            <div className="info_ItemDetail">
+                <h3>{item.title}</h3>
+                <p className="p_description">{item.description}</p>
+                <p className="p_price">${item.price}</p>
+                <ItemCount stock={3} initial={1} onAdd={() => { console.log("Tocaste el boton de comprar") }} />
+            </div>
+        </main>
     )
 }
 

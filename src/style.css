@@ -22,37 +22,41 @@
 
 .nav-header {
     display: flex;
-    justify-content: space-evenly; 
+    justify-content: space-evenly;
 }
 
 .nav-ul {
     display: flex;
-    margin-left: 15rem; 
-} 
+    margin-left: 15rem;
+}
 
 
 .nav-ul li {
     padding-left: 1rem;
 }
-.iconCart{
+
+.iconCart {
     position: relative;
     left: 15rem;
     font-size: 25px;
 }
-.count{
+
+.count {
     position: relative;
-    left: 79rem;
+    left: 79.5rem;
     bottom: 2rem;
 }
-.form-ItemCount{
-    margin-left: 30rem;
-    position: relative;
-    top: 2rem;
-}   
-.form-input{
+
+.form-ItemCount {
+    margin-left: 10px;
+    margin-top: 90px;
+}
+
+.form-input {
     text-align: center;
 }
-.btn-remove{
+
+.btn-remove {
     position: relative;
     right: 9rem;
     top: 0.3rem;
@@ -60,10 +64,13 @@
     background-color: inherit;
     cursor: pointer;
 }
-.iconRemove,.iconAdd{
+
+.iconRemove,
+.iconAdd {
     font-size: 18px;
 }
-.btn-add{
+
+.btn-add {
     position: relative;
     top: 0.3rem;
     right: 2.3rem;
@@ -71,26 +78,183 @@
     background-color: inherit;
     cursor: pointer;
 }
-.comp-main{
+
+.comp-main {
     height: 150vh;
 }
-.item{
+
+.item {
     min-height: 60vh;
     display: inline-flex;
     max-width: 1000px;
     padding-top: 7vh;
     margin-left: 9rem;
 }
-.card-item{
+
+.card-item {
     width: 250px;
     height: auto;
     background-color: white;
     box-shadow: black 2px 5px 5px 2px;
 }
-.comp-footer{
+
+.comp-footer {
     width: 100%;
     background-color: grey;
 }
-.comp-footer p{
+
+.comp-footer p {
     text-align: center;
+}
+
+.main_category_logos {
+    width: 100%;
+    height: 55.5vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 13rem;
+}
+
+.main_category_logos img {
+    margin: 0px 1.5rem 0px 1.5rem;
+    width: 10rem;
+    height: 6rem;
+}
+
+.main_category_logos :link {
+    height: 0px;
+}
+
+.main_ItemDetail {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 87.1vh;
+}
+
+.img_ItemDetail {
+    height: 500px;
+    width: 400px;
+    margin-right: 90px;
+}
+
+.img_ItemDetail img {
+    min-height: auto;
+    margin: auto;
+    width: 115%;
+}
+
+.info_ItemDetail {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    height: 500px;
+    margin-right: 50px;
+    margin-top: 20px;
+}
+
+.info_ItemDetail h3 {
+    margin-top: 60px;
+}
+
+.info_ItemDetail .p_description {
+    margin-top: 40px;
+}
+
+.info_ItemDetail .count_ItemDetail {
+    margin-right: 200px;
+}
+
+.info_ItemDetail .p_price {
+    margin-top: 80px;
+    font-size: 40px;
+}
+
+.detail_main {
+    height: 100vh;
+}
+
+.comp-detail {
+    height: 87.1vh;
+}
+.ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    background: transparent;
+    border: 3px solid #3c3c3c;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 150px;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: black;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px black;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+}
+
+.ring:before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid transparent;
+    border-top: 3px solid black;
+    border-right: 3px solid black;
+    border-radius: 50%;
+    animation: animateC 2s linear infinite;
+}
+
+.span_ring {
+    display: block;
+    position: absolute;
+    top: calc(50% - 2px);
+    left: 50%;
+    width: 50%;
+    height: 4px;
+    background: transparent;
+    transform-origin: left;
+    animation: animate 2s linear infinite;
+}
+
+.span_ring:before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: black;
+    top: -6px;
+    right: -8px;
+    box-shadow: 0 0 20px black;
+}
+
+@keyframes animateC {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(45deg);
+    }
+
+    100% {
+        transform: rotate(405deg);
+    }
 }

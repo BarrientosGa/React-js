@@ -4,42 +4,48 @@
         "title" : "Celular Motorola E7i Power 32 GB Azul",
         "description" : "agregar descripcion",
         "price" : 19999,
-        "img" : "/motorola_e7i.png"
+        "img" : "/motorola_e7i.png",
+        "marca" : "motorola"
     },
     {
         "id" : 1 ,
         "title" : "Celular Samsung Galaxy S20FE 128 GB Verde",
         "description" :"agregar descripcion",
         "price" : 86999,
-        "img" : "/samsung_A21.png"
+        "img" : "/samsung_A21.png",
+        "marca" : "samsung"
     },
     {
         "id" : 2 ,
         "title" : "Celular LG Velvet 128 GB Gris",
         "description" : "agregar descripcion",
         "price" : 69999,
-        "img" : "/moto_e6i.png"
+        "img" : "/moto_e6i.png",
+        "marca" : "lg"
     },
     {
         "id" : 3 ,
         "title" : "Celular Motorola Moto Edge 6GB 128 GB Rojo",
         "description" : "agregar descripcion",
         "price" : 103499,
-        "img" : "/moto_g100.png"
+        "img" : "/moto_g100.png",
+        "marca" : "motorola"
     },
     {
         "id" : 4 ,
         "title" : "Celular Samsung A01 Core 16 GB",
         "description" : "agregar descripcion",
         "price" : 15999,
-        "img" : "/samsung_s21.png"
+        "img" : "/samsung_s21.png",
+        "marca" : "samsung"
     },
     {
         "id" : 5 ,
         "title" : "Celular LG K41S 32 GB Titanium",
         "description" : "agregar descripcion",
         "price" : 22999,
-        "img" : "/lg_k41s.png"
+        "img" : "/lg_k41s.png",
+        "marca" : "lg"
     }
 
 ]

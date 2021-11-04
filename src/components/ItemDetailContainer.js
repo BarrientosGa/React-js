@@ -1,18 +1,26 @@
 import { useState, useEffect } from "react"
 import productos_JSON from "./productos.json"
 import ItemDetail from "./ItemDetail"
+import { useParams } from "react-router"
 const ItemDetailContainer = () => {
+    const {id} = useParams() 
     const [producto, setProducto] = useState([])
     useEffect(() => {
-        promesa
+        if(id){
+            promesa
             .then(data => {
                 setTimeout(() => {
-                    getItem(data)
+                    getItem(data.filter(item => item.id == id))
                 }, 2000)
             })
-            .catch(() => {
-                console.log("error")
+        }
+        else{
+            promesa
+            .catch(()=>{
+                console.log("Error")
             })
+        }
+        
     }, [])
     const getItem = (data) => {
         setProducto(data)
@@ -22,9 +30,10 @@ const ItemDetailContainer = () => {
     })
     return (
         <div>
-            {producto.map(prod => {
+            {producto.length==0?<div className="ring">Cargando<span className="span_ring"></span></div>:producto.map(prod => {
                 return <ItemDetail item={prod}/>
             })}
+            
         </div>
 
     )
