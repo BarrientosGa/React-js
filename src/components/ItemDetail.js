@@ -1,9 +1,15 @@
 import ItemCount from './ItemCount';
+import { contexto } from './context/CartContext';
+import { useContext } from 'react';
 import { useHistory } from 'react-router';
+
 const ItemDetail = ({ item }) => {
     const {push} = useHistory();
+    const {agregarProducto} = useContext(contexto);
+    
+
     function onAdd(cantidad){
-        console.log(cantidad,item); //me trae del hijo la cantidad
+        agregarProducto(cantidad,item);
         push("/cart") // despues de mostrar me redirrecciona a Cart
     }
     return (
