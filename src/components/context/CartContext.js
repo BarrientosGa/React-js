@@ -7,36 +7,51 @@ export const {Provider} = contexto;
 export const CustonProvider = ({children}) =>{
     const [cart, setCart] = useState([]);
 
-    const addItem = (cantidad,item) =>{
-        if(cart.some(product => product.id === item.id)){
-            const productoEnCart = cart.find(product => product.id === item.id)
-            productoEnCart.cantidad += cantidad;
-            console.log(productoEnCart);
+    const agregarProducto = (item,cantidad) =>{
+        if(!isInCart(item.id)){
+            console.log("agregando producto");
+            setCart([...cart,{ // creo un nuevo objeto a partir de item y cantidad
+                id: item.id,
+                title: item.title,
+                price: item.price,
+                description: item.description,
+                img: item.img,
+                marca: item.marca,
+                cantidad: cantidad
+            }]);
         }
         else{
-            console.log("no hay nada en el carrito");
-            setCart([...cart, {cantidad,item}])
-            console.log(cart);
-            
+            console.log("actualizando producto");
+            const producto_En_Cart = cart.map(producto =>{
+                if(producto.id === item.id){
+                    producto.cantidad += cantidad; 
+                }
+                return producto; //retorna el objeto producto
+            })
+            setCart(producto_En_Cart); // actualiza el producto en el carrito. devuelve un array
         }
-        
-    }
-    /* const isInCart = (id) =>{
-        return 
-    } */
 
-    const removeItem = (itemId) =>{
     }
-    const clear = () => {
+    const isInCart = (id) =>{
+        return cart.find(cartItem => cartItem.id === id);
+    }
+
+    const eliminarProducto = (itemId) =>{
+        const producto_Removido = cart.filter(producto => producto.id !==itemId);
+        setCart(producto_Removido);
+        return producto;
+
+    }
+    const vaciarCarrito = () => {
         setCart([]);
     }
     
 
     const valor_De_contexto = {
         cart : cart,
-        agregarProducto : addItem,
-        eliminarProducto : removeItem,
-        vaciarCarrito : clear
+        agregarProducto : agregarProducto,
+        eliminarProducto : eliminarProducto,
+        vaciarCarrito : vaciarCarrito
     }
 
 

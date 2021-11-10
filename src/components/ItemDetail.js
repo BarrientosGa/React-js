@@ -9,7 +9,7 @@ const ItemDetail = ({ item }) => {
     
 
     function onAdd(cantidad){
-        agregarProducto(cantidad,item);
+        agregarProducto(item,cantidad);
         push("/cart") // despues de mostrar me redirrecciona a Cart
     }
     return (
