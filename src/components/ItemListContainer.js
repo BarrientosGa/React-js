@@ -2,8 +2,9 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router"
 import ItemList from "./ItemList"
 import productos_Json from "./productos.json"
+import { firestore } from "../firebase" // acceso a la base de datos
 
-const ItemListContainer = ({contador}) => {
+const ItemListContainer = () => {
     const {marca}=useParams()
 
     
@@ -37,7 +38,6 @@ const ItemListContainer = ({contador}) => {
 
     return (
         <div>
-            <span className="count">{contador}</span>
             {productos.length===0?<div className="ring">Cargando<span className="span_ring"></span></div>:<ItemList items={productos}/>}
         </div>
     )

@@ -1,15 +1,21 @@
 import ItemCount from './ItemCount';
 import { contexto } from './context/CartContext';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { useHistory } from 'react-router';
 
 const ItemDetail = ({ item }) => {
+    const [mostrar,setMostrar] = useState(false);
     const {push} = useHistory();
     const {agregarProducto} = useContext(contexto);
     
 
-    function onAdd(cantidad){
+    function onAdd(cantidad,e){
+        e.preventDefault();
         agregarProducto(item,cantidad);
+        setMostrar(!mostrar);
+        
+    }
+    const redireccionar = () =>{
         push("/cart") // despues de mostrar me redirrecciona a Cart
     }
     return (
@@ -22,6 +28,7 @@ const ItemDetail = ({ item }) => {
                 <p className="p_description">{item.description}</p>
                 <p className="p_price">${item.price}</p>
                 <ItemCount stock={3} initial={1} onAdd={onAdd} />
+                {mostrar && <button onClick={redireccionar}>Ir a carrito</button>}
             </div>
         </main>
     )

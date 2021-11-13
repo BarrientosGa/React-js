@@ -43,8 +43,8 @@
 
 .count {
     position: relative;
-    left: 79.5rem;
-    bottom: 2rem;
+    left: 15.2rem;
+    bottom: 5px;
 }
 
 .form-ItemCount {
@@ -257,4 +257,8 @@
     100% {
         transform: rotate(405deg);
     }
+}
+
+.comp-Cart {
+    height: 87.3vh;
 }
