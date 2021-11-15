@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +7,7 @@
     text-decoration: none;
     list-style: none;
     color: inherit;
+    font-family: 'DM Sans', sans-serif;
 }
 
 .header {
@@ -46,6 +49,9 @@
     left: 15.2rem;
     bottom: 5px;
 }
+.count-none{
+    display: none;
+}
 
 .form-ItemCount {
     margin-left: 10px;
@@ -80,7 +86,7 @@
 }
 
 .comp-main {
-    height: 150vh;
+    height: 130vh;
 }
 
 .item {
@@ -96,8 +102,9 @@
     height: auto;
     background-color: white;
     box-shadow: black 2px 5px 5px 2px;
+    border-radius: 20px;
+    
 }
-
 .comp-footer {
     width: 100%;
     background-color: grey;
@@ -180,6 +187,7 @@
 .comp-detail {
     height: 87.1vh;
 }
+
 .ring {
     position: absolute;
     top: 50%;
@@ -260,5 +268,54 @@
 }
 
 .comp-Cart {
-    height: 87.3vh;
+    height: 86.6vh;
 }
+
+.cart-table {
+    margin-top: 70px;
+    margin-left: 150px;
+}
+.cart-btn-remove{
+    background-color: white;
+    border-style: none;
+    position: relative;
+    left: 40px;
+    color: black;
+    cursor: pointer;
+}
+.cart-btn-remove:hover{
+    color: red;
+}
+.container-cartEmpty{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    height: 90vh;
+    width: 100%;
+    border-style: 1px solid black;
+}
+.details-cartEmpty{
+    display: flex;
+    width: 335px;
+    height: 35px;
+    
+}
+.button-cartEmpty{
+    width: 100px;
+    height: 25px;
+    padding-top: 30px;
+}
+.icon-cartEmpty{
+    position: relative;
+    top: 10px;
+    left: 7px;
+}
+.container-finishBuy{
+    position: relative;
+    left: 57rem;
+    top: 15rem;
+}
+.container-finishBuy button{
+    margin-left: 20px;
+} 

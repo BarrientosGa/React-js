@@ -9,7 +9,7 @@ const CartWidget = () => {
             <span className="material-icons iconCart">
                 shopping_cart
             </span>
-            {cart.length == 0 ? <span className="count">0</span> : <span className="count">{cart.length}</span>}
+            {cart.length == 0 ? <span className="count-none">0</span> : <span className="count">{cart.length}</span>}
 
         </div>
 
