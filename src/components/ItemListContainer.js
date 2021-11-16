@@ -1,38 +1,49 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router"
 import ItemList from "./ItemList"
-import productos_Json from "./productos.json"
 import { firestore } from "../firebase" // acceso a la base de datos
+import { useParams } from "react-router"
 
 const ItemListContainer = () => {
-    const {marca}=useParams()
-
-    
+    const {marca} = useParams();
+    const arrProducts = []
     const [productos, setProductos] = useState([])
     useEffect(() => {
-        let promesa
+        const db = firestore
 
+        const collection = db.collection("products")
+
+        const promesa = collection.get()
         if(marca){
-
-            promesa= new Promise((resolve) => {
-                setTimeout(() => {
-                    resolve(productos_Json.filter(prod=>prod.marca == marca))
-                },2000)
-                
-            })  
+            promesa.then(doc => {
+                doc.forEach(doc => {
+                    arrProducts.push({
+                        id: doc.id,
+                        img: doc.data().img,
+                        title: doc.data().title,
+                        description: doc.data().description,
+                        marca: doc.data().marca,
+                        price: doc.data().price
+                    })
+                })
+                const productosPorCategorias= arrProducts.filter(producto => producto.marca == marca)
+                setProductos(productosPorCategorias)
+            })
         }
         else{
-            promesa= new Promise((resolve) => {
-                setTimeout(() => {
-                    resolve(productos_Json)
-                },2000)
-                
-            })  
-        }
-        promesa.then(resolve=> {
-            setProductos(resolve)
+            promesa.then(doc => {
+                doc.forEach(doc => {
+                    arrProducts.push({
+                        id: doc.id,
+                        img: doc.data().img,
+                        title: doc.data().title,
+                        description: doc.data().description,
+                        marca: doc.data().marca,
+                        price: doc.data().price
+                })
+            })
+            setProductos(arrProducts)
         })
-                
+    }
     },[marca])
     
 

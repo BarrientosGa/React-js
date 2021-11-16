@@ -7,6 +7,7 @@ import MainItemDetailContainer from "./MainItemDetailContainer"
 import Cart from "./Cart"
 import CustonProvider from "./context/CartContext"
 
+
 const App = () => {
     return (
         <BrowserRouter>
