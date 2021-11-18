@@ -50,7 +50,7 @@ const Cart = () => {
                         )
                     })}
                     <div className="container-finishBuy">
-                        <button onClick={finalizarCompra}>Finalizar compra</button>
+                        <button /* onClick={finalizarCompra} */>Finalizar compra</button>
                         <button onClick={vaciarCarrito}>Vaciar carrito</button>
                     </div>
                 </table>

@@ -1,13 +1,23 @@
 import { Link } from "react-router-dom"
-/* import productos_Json from "./productos.json" */
+import { useState, useEffect } from "react"
+import GetCategory from "./GetCategory"
 const Category = () => {
+    const [categories, setCategories] = useState([])
 
+    useEffect(() => {
+        GetCategory().then(resultado =>{
+            setCategories(resultado)
+        })
+    }, [])
 
     return (
         <main className="main_category_logos">
-            <Link to="/categorias/samsung"><img src="samsung_logo.png" alt="logo de samsung"/></Link>
-            <Link to="/categorias/motorola"><img src="/logo_motorola.png" alt="logo de motorola"/></Link>
-            <Link to="/categorias/lg"><img src="/logo_lg.png" alt="logo de lg"/></Link>
+            {categories.length == 0 ? <div className="ring">Cargando<span className="span_ring"></span></div> :
+
+                categories.map(category => {
+                    return <Link to={`/categorias/${category.marca}`}><img src={category.img} alt="logo de celular"/></Link>
+                })
+            }
         </main>
     )
 }
