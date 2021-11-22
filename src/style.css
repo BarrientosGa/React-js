@@ -9,7 +9,16 @@
     color: inherit;
     font-family: 'DM Sans', sans-serif;
 }
-
+html , body , #root {
+    height: 100vh;
+}
+#root {
+    display: flex;
+    flex-direction: column;
+}
+main {  
+    flex-grow: 1;
+}
 .header {
     background-color: yellow;
     width: 100%;
@@ -319,3 +328,20 @@
 .container-finishBuy button{
     margin-left: 20px;
 } 
+.form-user{
+    height: 86.6vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 30px;
+}
+.form-user input{
+    width:300px;
+    height: 30px;
+    margin-top: 10px;
+}
+.form-user button{
+    margin-top: 10px;
+}

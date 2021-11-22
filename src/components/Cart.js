@@ -1,9 +1,16 @@
 import { contexto } from "./context/CartContext"
-import { useContext } from "react"
+import { useContext,useState } from "react"
 import { Link } from "react-router-dom"
+import { useHistory } from "react-router"
+
 
 const Cart = () => {
-    const { cart, eliminarProducto, vaciarCarrito, finalizarCompra} = useContext(contexto)
+    const { cart, eliminarProducto, vaciarCarrito } = useContext(contexto)
+    const {push} = useHistory()
+    const [toClick,setToClick] = useState(false)
+    const finalizarCompra = () => {
+        setToClick(true)
+    }
     return (
         <main className="comp-Cart">
             {cart.length == 0 ? <div className="container-cartEmpty">
@@ -31,6 +38,7 @@ const Cart = () => {
                         const sacarProducto = () => {
                             eliminarProducto(producto.id)
                         }
+                        
                         return (
                             <tbody className="cart-tbody">
                                 <tr key={producto.id}>
@@ -50,8 +58,8 @@ const Cart = () => {
                         )
                     })}
                     <div className="container-finishBuy">
-                        <button /* onClick={finalizarCompra} */>Finalizar compra</button>
-                        <button onClick={vaciarCarrito}>Vaciar carrito</button>
+                        <button onClick={finalizarCompra}>Finalizar compra</button>
+                        {toClick && push("/form")}
                     </div>
                 </table>
             }

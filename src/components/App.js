@@ -1,11 +1,12 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import Header from "./Header"
-import MainItemListContainer from "./MainItenListContainer"
+import ItemListContainer from "./ItemListContainer"
+import ItemDetailContainer from "./ItemDetailContainer"
 import Footer from "./Footer"
 import Category from "./Category"
-import MainItemDetailContainer from "./MainItemDetailContainer"
 import Cart from "./Cart"
 import CustonProvider from "./context/CartContext"
+import Form from "./Form"
 
 
 const App = () => {
@@ -13,13 +14,17 @@ const App = () => {
         <BrowserRouter>
             <CustonProvider>
                 <Header />
-                <Switch>
-                    <Route exact path="/" component={MainItemListContainer}></Route>
-                    <Route exact path="/categorias" component={Category}></Route>
-                    <Route exact path="/cart" component={Cart}></Route>
-                    <Route path="/categorias/:marca" component={MainItemListContainer}></Route>
-                    <Route path="/producto/:id" component={MainItemDetailContainer}></Route>
-                </Switch>
+                <main>
+                    <Switch>
+                        <Route exact path="/" component={ItemListContainer}></Route>
+                        <Route exact path="/categorias" component={Category}></Route>
+                        <Route exact path="/cart" component={Cart}></Route>
+                        <Route path="/categorias/:marca" component={ItemListContainer}></Route>
+                        <Route path="/producto/:id" component={ItemDetailContainer}></Route>
+                        <Route exact path="/form" component={Form}></Route>
+                    </Switch>
+                </main>
+
                 <Footer />
             </CustonProvider>
         </BrowserRouter>

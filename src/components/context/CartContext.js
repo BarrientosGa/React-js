@@ -10,7 +10,6 @@ export const CustonProvider = ({ children }) => {
     const cartCopiado = [...cart];
     const agregarProducto = (prod, cantidad) => {
         if (!isInCart(prod.id)) {
-            console.log(prod.id);
             cartCopiado.push({
                 id: prod.id,
                 title: prod.title,
@@ -21,7 +20,6 @@ export const CustonProvider = ({ children }) => {
                 cantidad: cantidad
             });
             setCart(cartCopiado);
-            console.log(cartCopiado);
         }
         else {
             const producto_En_Cart = cartCopiado.map(producto => {
@@ -47,18 +45,12 @@ export const CustonProvider = ({ children }) => {
     const vaciarCarrito = () => {
         setCart([]);
     }
-    /* const finalizarCompra = () => {
-        alert("Gracias por su compra");
-        setTimeout(() =>{
-            window.location.reload(push("/"));
-        },1000); */
-    //}
+
     const valor_De_contexto = {
         cart: cart,
         agregarProducto: agregarProducto,
         eliminarProducto: eliminarProducto,
         vaciarCarrito: vaciarCarrito
-        /* finalizarCompra: finalizarCompra */
     }
 
 

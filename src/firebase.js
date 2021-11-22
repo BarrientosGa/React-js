@@ -5,17 +5,17 @@ import "firebase/firestore";
 //copio mis credenciales
 const firebaseConfig = {
 
-    apiKey: "AIzaSyAXCVN23XrlL3xr_s6d3YxpaIQAX0RIO8E",
+    apiKey: process.env.REACT_APP_apiKey,
 
-    authDomain: "proyecto-react-76695.firebaseapp.com",
+    authDomain: process.env.REACT_APP_authDomain,
 
-    projectId: "proyecto-react-76695",
+    projectId: process.env.REACT_APP_projectId,
 
-    storageBucket: "proyecto-react-76695.appspot.com",
+    storageBucket: process.env.REACT_APP_storageBucket,
 
-    messagingSenderId: "320284758079",
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
 
-    appId: "1:320284758079:web:345ff57749b204e4c6a88a"
+    appId: process.env.REACT_APP_appId
 
 };
 //inicializo firebase
