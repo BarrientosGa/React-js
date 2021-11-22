@@ -3,6 +3,7 @@ import { useContext, useState } from "react"
 import { firestore } from "../firebase"
 import { useHistory } from "react-router"
 import { Link } from "react-router-dom"
+import firebase from "firebase/app"
 
 const Form = () => {
     const { push } = useHistory
@@ -35,8 +36,8 @@ const Form = () => {
         const pedido = {
             cliente: datosUser,
             productos: cart,
-            total: totalDeProductos()
-            /* fecha : firebase.firestore.TimeStamp.now() */
+            total: totalDeProductos(),
+            fecha : firebase.firestore.Timestamp.fromDate(new Date())
         }
         const db = firestore
 
