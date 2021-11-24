@@ -12,10 +12,10 @@ const Category = () => {
 
     return (
         <main className="main_category_logos">
-            {categories.length == 0 ? <div className="ring">Cargando<span className="span_ring"></span></div> :
+            {categories.length === 0 ? <div className="ring">Cargando<span className="span_ring"></span></div> :
 
                 categories.map(category => {
-                    return <Link to={`/categorias/${category.marca}`}><img src={category.img} alt="logo de celular"/></Link>
+                    return <Link  key={category.id} to={`/categorias/${category.marca}`}><img src={category.img} alt="logo de celular"/></Link>
                 })
             }
         </main>

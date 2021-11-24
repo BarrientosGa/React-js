@@ -12,6 +12,7 @@ const GetCategory = () => {
             resultados.forEach(resultado => {
                 arrCategory.push(
                     {
+                        id: resultado.id,
                         ...resultado.data()
                     }
                 )

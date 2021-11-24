@@ -1,12 +1,10 @@
 import { contexto } from "./context/CartContext"
 import { useContext, useState } from "react"
 import { firestore } from "../firebase"
-import { useHistory } from "react-router"
 import { Link } from "react-router-dom"
 import firebase from "firebase/app"
 
 const Form = () => {
-    const { push } = useHistory
     const { cart, vaciarCarrito } = useContext(contexto)
     const [id, setId] = useState(" ")
     const [datosUser, setDatosUser] = useState({
@@ -22,7 +20,6 @@ const Form = () => {
             [e.target.name]: e.target.value
         })
     }
-
     const totalDeProductos = () => {
         let total = 0
         cart.forEach(producto => {
@@ -30,15 +27,17 @@ const Form = () => {
         })
         return total
     }
+    const pedido = {
+        cliente: datosUser,
+        productos: cart,
+        total: totalDeProductos(),
+        fecha: firebase.firestore.Timestamp.fromDate(new Date())
+    }
+
 
     const confirmarPedido = (e) => {
         e.preventDefault()
-        const pedido = {
-            cliente: datosUser,
-            productos: cart,
-            total: totalDeProductos(),
-            fecha : firebase.firestore.Timestamp.fromDate(new Date())
-        }
+
         const db = firestore
 
         const collection = db.collection("orders")
@@ -52,7 +51,7 @@ const Form = () => {
             .catch(() => {
                 console.log("error")
             })
-            vaciarCarrito()
+        vaciarCarrito()
     }
     if (id === " ") {
         return (
@@ -61,7 +60,7 @@ const Form = () => {
                 <input onChange={handleInputChange} name="nombre" type="text" placeholder="Nombre" required />
                 <input onChange={handleInputChange} name="email" type="email" placeholder="Email" required />
                 <input onChange={handleInputChange} name="tel" type="tel" placeholder="Telefono" required />
-                <button onClick={confirmarPedido}>Confirmar pedido</button>
+                <button className="btn-finalizarOrders" onClick={confirmarPedido}>Confirmar pedido</button>
             </form>
         )
     }
@@ -71,9 +70,9 @@ const Form = () => {
             <div className="form-user">
                 <h1>Gracias por tu compra</h1>
                 <p>Tu pedido se ha realizado con exito, tu id de compra es: {id}</p>
-                <Link to="/"><button>Volver al inicio</button></Link>
+                <Link to="/"><button className="btn-home">Volver al inicio</button></Link>
             </div>
-            
+
         )
     }
 

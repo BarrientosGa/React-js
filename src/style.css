@@ -15,8 +15,10 @@ html , body , #root {
 #root {
     display: flex;
     flex-direction: column;
+    
 }
-main {  
+main {
+
     flex-grow: 1;
 }
 .header {
@@ -66,7 +68,13 @@ main {
     margin-left: 10px;
     margin-top: 90px;
 }
-
+.btn-itemCount{
+    border-radius: 50px;
+    background-color: #e0de75;
+    border-style: none;
+    width: 140px;
+    cursor: pointer;
+}
 .form-input {
     text-align: center;
 }
@@ -113,6 +121,22 @@ main {
     box-shadow: black 2px 5px 5px 2px;
     border-radius: 20px;
     
+}
+.card-item .card-item-btn{
+    position: relative;
+    left: 50px;
+    border-radius: 50px;
+    background-color: #e0de75;
+    border-style: none;
+    width: 150px;
+    cursor: pointer;
+}
+.card-item .card-item-btn:hover{
+    background-color: beige;
+}
+.card-item-price{
+    text-align: center;
+    font-weight: bold;
 }
 .comp-footer {
     width: 100%;
@@ -166,7 +190,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: start;
+    justify-content: flex-start;
     height: 500px;
     margin-right: 50px;
     margin-top: 20px;
@@ -178,6 +202,8 @@ main {
 
 .info_ItemDetail .p_description {
     margin-top: 40px;
+    width: 400px;
+    font-size: 15px;
 }
 
 .info_ItemDetail .count_ItemDetail {
@@ -277,7 +303,8 @@ main {
 }
 
 .comp-Cart {
-    height: 86.6vh;
+    height: 100vh;
+    width: 100%;
 }
 
 .cart-table {
@@ -344,4 +371,41 @@ main {
 }
 .form-user button{
     margin-top: 10px;
+}
+.btn-finishBuy{
+    position: relative;
+    bottom: 100px;
+    right: 35rem;
+    width: 150px;
+    border-radius: 20px;
+    border-style: none;
+    background-color: #e0de75;
+    cursor: pointer;
+}
+.btn-irACart{
+    position: relative;
+    top: 20px;
+    left: 50px;
+    border-radius: 20px;
+    border-style: none;
+    background-color: #e0de75;
+    width: 80px;
+    cursor: pointer;
+}
+.btn-home{
+    border-radius: 20px;
+    width: 110px;
+    border-style: none;
+    background-color: #e0de75;
+    cursor: pointer;
+}
+.btn-finalizarOrders{
+    border-radius: 20px;
+    width: 140px;
+    border-style: none;
+    cursor: pointer;
+    background-color: hotpink;
+}
+.item-title{
+    text-align: center;
 }

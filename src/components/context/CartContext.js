@@ -1,11 +1,9 @@
 import { createContext, useState } from "react";
-import { useHistory } from "react-router"
 export const contexto = createContext();
 
 export const { Provider } = contexto;
 
 export const CustonProvider = ({ children }) => {
-    const { push } = useHistory();
     const [cart, setCart] = useState([]);
     const cartCopiado = [...cart];
     const agregarProducto = (prod, cantidad) => {
