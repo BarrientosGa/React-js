@@ -1,5 +1,7 @@
 # E-commerce - tienda de celulares
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0deb93b0-2c15-48a7-8ac6-31f9732372d4/deploy-status)](https://app.netlify.com/sites/goofy-thompson-f1a776/deploys)
+
 ## Descripcion del proyecto
 **celulandia** es una tienda online donde vas a poder simular la compra de productos, eligiendo la cantidad, completando un formulario con tus datos y obteniendo el id de tu compra. Toda la informacion de la compra se guarda en firebase.
 ***
