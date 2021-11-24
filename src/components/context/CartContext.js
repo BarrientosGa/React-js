@@ -24,9 +24,9 @@ export const CustonProvider = ({ children }) => {
                 if (producto.id === prod.id) {
                     producto.cantidad += cantidad;
                 }
-                return producto; //retorna el objeto producto
+                return producto; 
             })
-            setCart(producto_En_Cart); // actualiza el producto en el carrito. devuelve un array
+            setCart(producto_En_Cart); 
         }
 
     }

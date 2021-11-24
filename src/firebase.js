@@ -1,8 +1,8 @@
-// me traigo firebase
+
 import firebase from 'firebase/app';
-// me traigo firestore
+
 import "firebase/firestore";
-//copio mis credenciales
+
 const firebaseConfig = {
 
     apiKey: process.env.REACT_APP_apiKey,
@@ -18,8 +18,8 @@ const firebaseConfig = {
     appId: process.env.REACT_APP_appId
 
 };
-//inicializo firebase
+
 const app = firebase.initializeApp(firebaseConfig);
 
-//me traigo firestore
+
 export const firestore = firebase.firestore(app);
